@@ -11,10 +11,8 @@ cmake命令在cmakelists.txt文件所在路径（即源码包）下执行
 ```
 -DOPENCV_EXTRA_MODULES_PATH=<opencv_contrib>/modules 
 ```
-* 配置sift等专利算法
--D OPENCV_ENABLE_NONFREE:BOOL=ON
 
-> 不然会在８７％处报错：error: ‘cv::xfeatures2d::sift’ has not been declared
+
 
 ## 配置环境变量
 ### 程序运行时去哪搜索需要加载的动态库？
@@ -26,4 +24,35 @@ cmake命令在cmakelists.txt文件所在路径（即源码包）下执行
 sudo vim /etc/ld.so.conf.d/opencv.conf 
 ```
 里面添加
-/usr/local/lib  
+/usr/local/lib 
+
+### ldconfig命令
+<https://man.linuxde.net/ldconfig>
+
+> ldconfig通常在系统启动时运行，而当用户安装了一个新的动态链接库时，就需要手工运行这个命令。
+
+
+### cmake使用opencv
+#### cmake环境变量
+* 设置输出目录
+```
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+```
+* 设置头文件搜索路径
+```
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+```
+* 设置非标准的库文件搜索路径
+```
+
+```
+<https://zhuanlan.zhihu.com/p/50829542>
+
+#### ..的含义是执行命令的当前目录，而不是文件所在目录
+![ahh](https://s1.ax1x.com/2020/04/30/Jb9VQe.png)
+flower.jpg不是在项目路径下的resource路径下。
+而是在当前命令行路径的上级路劲去找resource文件夹
+
+## 参考
+<https://www.cnblogs.com/fx-blog/p/8213704.html>
