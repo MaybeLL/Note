@@ -29,6 +29,7 @@ ip协议是不可靠的
 —By 汤普金斯:以前自己也doubt过，为什么每层都要差错检测呢？其实就像上面答案说的一样，每一层的关注点不同，“端到端”的定义也不同，链路层是到路由器/交换机，而传输层是到接收端。
 
 https://cloud.tencent.com/developer/article/1097487
+[计算机网络面试题](https://juejin.im/post/5b7be0b2e51d4538db34a51e#heading-21)
 
 ## TCP如何保证可靠传输?
 * 丢失-->
