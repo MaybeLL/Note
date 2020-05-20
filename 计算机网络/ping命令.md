@@ -27,4 +27,3 @@ tracert google.cn
 ![tracert](https://s1.ax1x.com/2020/05/15/YruBVI.png) 路径12个路由，刚好128-116 =12
 
 ## ping 127.0.0.1
-
