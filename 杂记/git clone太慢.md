@@ -1,1 +1,0 @@
-使用镜像网站https://github.com.cnpmjs.org/
